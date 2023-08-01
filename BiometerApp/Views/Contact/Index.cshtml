@@ -1,0 +1,128 @@
+﻿@*@model IEnumerable<Contact>;*@
+    @model Contact;
+@{
+    ViewData["Title"] = "Contact";
+}
+
+<partial name="_Nortification"/>
+<section id="contact" >
+    <div class="container">
+        <div class="row text-center">
+            <h1 class="display-3 fw-bold text-capitalize">Get started</h1>
+            <div class="heading-line"></div>
+            <p class="lh-lg">
+               feel free to contact.
+            </p>
+        </div>
+
+        <!-- START THE CTA CONTENT  -->
+        <div class="row text-dark" style="background-image:linear-gradient(to right, #4D57DE ,#854EEE)">
+            <div class="col-12 col-lg-6 gradient shadow p-3">
+                <div class="container">
+                    <div class="row pt-5">
+                        <!-- CONTENT FOR THE MOBILE NUMBER  -->
+                        <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+                            <div class="contact-box__icon">
+                                <a class="btn text-white btn-floating m-1"
+                                   style="background-color: #333333;"
+                                   role="button">
+                                    <i class="fa-solid fa-phone-volume"></i>
+                                </a>
+                            </div>
+                            <div class="contact-box__info">
+                                <a href="#" style="color:#fff">+91 8810525614</a>
+                                <p class="contact-box__info--subtitle">  Mon-Fri 9am-6pm</p>
+                            </div>
+                        </div>
+                        <!-- CONTENT FOR EMAIL  -->
+                        <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+                            <div class="contact-box__icon">
+                                <a class="btn text-white btn-floating m-1"
+                                   style="background-color:grey;"
+                                   role="button">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </a>
+                            </div>
+                            <div class="contact-box__info">
+                                <a href="#" style="color:#fff">info@company.com</a>
+                                <p class="contact-box__info--subtitle">Online support</p>
+                            </div>
+                        </div>
+                        <!-- CONTENT FOR LOCATION  -->
+                        <div class="col-md-4 col-lg-4 contact-box pt-1 d-md-block d-lg-flex d-flex">
+                            <div class="contact-box__icon">
+                                <a class="btn text-white btn-floating m-1"
+                                   style="background-color: #333333;"
+                                   
+                                   role="button">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </a>
+                              
+                            </div>
+                            <div class="contact-box__info">
+                                <a href="#" style="color:#fff">Noida, IND</a>
+                                <p class="contact-box__info--subtitle">201301, Noida</p>
+                            </div>
+                        </div>
+                    </div>
+                    <section class="newsletter_area">
+                        <div class="container">
+                            <div class="row justify-content-center align-items-center">
+                                <div class="col-lg-12">
+                                    <div class="subscription_box text-center">
+                                        <h2 class="text-uppercase text-white">get update from anywhere</h2>
+                                        <p class="text-white">
+                                            Stay Tuned, Subscribe to our newslatter
+                                        </p>
+                                        <div class="subcribe-form" id="mc_embed_signup">
+                                            <form class="subscription relative">
+                                                <input name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email address'" required type="email">
+                                                
+                                                <button class="primary-btn hover d-inline mt-2">Get Started</button>
+                                                <div class="info"></div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            <div class="col-12 col-lg-6 bg-white shadow p-3">
+                <div class="form w-100 pb-2">
+                    <h4 class="fw-bolder mb-5 text-center text-primary">Lets connect and discuss productive</h4>
+                   @* <span asp-summary-for="all"></span>*@
+                    <form action="" class="row" method="post">
+                       
+                        <div class="col-lg-6 col-md mb-3 text-center">
+                            <input type="text" asp-for="firstname" placeholder="First Name" id="inputFirstName" class="shadow form-control form-control-lg">
+                            <span asp-validation-for="firstname" class="text-danger"></span>
+                        </div>
+                        <div class="col-lg-6 col-md mb-3">
+                            <input type="text" asp-for="lastname" placeholder="Last Name" id="inputLastName" class="shadow form-control form-control-lg">
+                            <span asp-validation-for="lastname" class="text-danger"></span>
+
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <input type="email" asp-for="email" placeholder="email address" id="inputEmail" class="shadow form-control form-control-lg">
+                            <span asp-validation-for="email" class="text-danger"></span>
+
+                        </div>
+                        <div class="col-lg-12 mb-3">
+                            <textarea name="message" asp-for="message" placeholder="message" id="message" rows="12" class="shadow form-control form-control-lg"></textarea>
+                            <span asp-validation-for="message" class="text-danger"></span>
+
+                        </div>
+                        <div class="text-center d-grid mt-1">
+                            <button type="submit" class="btn btn-primary rounded-pill pt-3 pb-3" value="Submit" >
+                                submit
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

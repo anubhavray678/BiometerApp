@@ -1,0 +1,61 @@
+﻿@model IEnumerable<BlogDetails>
+@{
+    ViewData["TItle"] = "Blog Details";
+}
+
+<div class="container p-3">
+    <div class="row p-4">
+        <div class="col-6">
+            <h2 class="text-primary">Blog Details</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="BlogDetail" asp-action="Index" class="btn btn-primary text-center">
+                <i class="fa-solid fa-circle-plus"></i> &nbsp; Publish New Blog
+            </a>
+        </div>
+    </div>
+    <br/>
+
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr class="bg-primary text-center">
+            <th class="text-white h6" width="10%">
+                Category Name
+            </th>
+                <th class="text-light h6" width="30%">
+                 Blog Title
+            </th>
+                <th class="text-light h6" width="20%">
+               Publish Time
+            </th>
+                <th class="text-light h6" width="10%">
+                    Operation
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model)
+        {
+            <tr class="">
+                <td >
+                    @obj.CategoryName
+                </td>
+                <td>
+                    @obj.BlogTitle
+                </td>
+                <td>
+                    @obj.Date
+                </td>
+                <td class="text-end">
+                    <div class="btn-group" role="group" >
+                            <a asp-controller="BlogDetail" asp-action="Edit" asp-route-id="@obj.Id" class="btn btn-primary mx-2"><i class="fa-solid fa-pen-to-square"></i>&nbsp; Edit</a>
+                            <a asp-controller="BlogDetail" asp-action="Delete" asp-route-id="@obj.Id" class="btn btn-danger mx-2"><i class="fa-solid fa-trash"></i>&nbsp; Delete</a>
+
+                    </div>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>
+</div>

@@ -1,0 +1,82 @@
+﻿
+@model IEnumerable<BlogDetails>;
+
+@{
+    ViewData["Title"] = "Blog Page";
+    var uid = ViewBag.ID;
+}
+
+
+
+<section class="blog_area single-post-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 posts-list">
+                <div class="single-post row">
+                    @foreach(var obj in Model)
+                      
+                    {
+                        
+                       
+
+                        @if (@obj.Id == uid){
+                    <div class="col-lg-12">
+                        <div class="feature-img">
+                                    <img class="img-fluid" src="~/@obj.CoverImagePath" alt="">
+                        </div>
+                    </div>
+                   
+                    <div class="col-lg-3  col-md-3">
+                        <div class="blog_info text-right">
+                            <div class="post_tag">
+                                @obj.CategoryName
+                            </div>
+                            <ul class="blog_meta list">
+                                        <li>@obj.AutherName &nbsp;<i class=" fa-solid fa-user"></i><i class="lnr lnr-user"></i></li>
+                                        <li>@obj.Date.Day -@obj.Date.Month, @obj.Date.Year &nbsp;<i class="fa-solid fa-clock"></i><i class="lnr lnr-calendar-full"></i></li>
+                            
+                            </ul>
+                          
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-9 blog_details">
+                        <h2>@obj.BlogTitle</h2>
+                        <p class="excert">
+                           @obj.FirstPara
+                        </p>
+                        
+                    </div>
+                    <div class="col-lg-12">
+                       
+                        <div class="row">
+                            <div class="col-6">
+                                <img class="img-fluid" src="" alt="">
+                            </div>
+                            <div class="col-lg-12 mt-25">
+                                <p>
+                                    @obj.SecondPara
+                                </p>
+                                    
+                                
+                            </div>
+                        </div>
+                    </div>
+                        }}
+                </div>
+
+            </div>
+            
+            <div class="col-lg-4">
+                <partial name="_Profile" />
+              
+            </div>
+        </div>
+      @*<partial name="_ReplyDetails" /> *@
+        <div>
+         
+        </div>
+
+        
+        
+    </div>
+</section>

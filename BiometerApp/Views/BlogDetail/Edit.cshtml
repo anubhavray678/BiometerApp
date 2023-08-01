@@ -1,0 +1,102 @@
+﻿@model BlogDetails
+<partial name="_Nortification" />
+<section class="blog_area ">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="blog_left_sidebar">
+                    <article class="row blog_item">
+                        <div class="col-md-3 card bg-transparent">
+                            <div class="blog_info text-right ">
+                                <div class="post_tag">
+                                    <a class="active h2" href="#">
+                                        <p class="active h2">
+                                            Publish Your Blog here!
+
+                                        </p>
+                                    </a>
+
+                                </div>
+                                <ul class="blog_meta list">
+                                    <li>
+                                        <a>
+                                            Write your thoughts on different niche
+
+                                            <i class="lnr lnr-user"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="active">
+                                            <p class="active h4">
+                                                We speak,<br />We Write
+                                                <br />
+                                                free to <br />express<i class="fa-solid fa-blog"></i>
+                                            </p>
+                                            <i class="lnr lnr-calendar-full"></i>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a asp-controller="BlogDetail" asp-action="Details" class="btn btn-info">View Blog Details</a>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="col-md-9">
+                            <div asp-validation-summary="All" class="text-danger">   </div>
+                            <form action="" class="row" method="post" enctype="multipart/form-data">
+
+
+                                <div class="col-lg-12 mb-3">
+                                    <label for="exampleInputEmail1">Category Name</label>
+                                    <input type="text" asp-for="CategoryName" class="form-control" placeholder="Ex-Technology, finance, science, entertainment, story" required>
+                                    <span asp-validation-for="CategoryName" class="text-danger"></span>
+                                </div>
+
+                                <div class="col-lg-12 mb-3">
+                                    <label>Auther Name</label>
+                                    <input class="form-control" placeholder="Auther name" asp-for="AutherName">
+                                    <span asp-validation-for="AutherName" class="text-danger"></span>
+                                </div>
+                                <br />
+
+                                <div class="col-lg-12 mb-3">
+                                    <label>Blog Title</label>
+                                    <input class="form-control" placeholder="Blog Title" asp-for="BlogTitle">
+                                    <span asp-validation-for="BlogTitle" class="text-danger"></span>
+                                </div>
+                                <br />
+                                <div class="col-lg-12 mb-3">
+                                    <label for="exampleFormControlTextarea1">First Paragraph</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write your content here..." rows="8" asp-for="FirstPara"></textarea>
+                                    <span asp-validation-for="FirstPara" class="text-danger"></span>
+                                </div>
+                                <br />
+                                <div class="col-lg-12 mb-3 d-grid">
+                                <label for="exampleFormControlFile1">Cover Photo</label>
+                                <input type="file" asp-for="CoverImage" class="form-control" id="exampleFormControlFile1" required/>
+                                </div>
+                                <br />
+                                <div class="col-lg-12 mb-3">
+                                    <label for="exampleFormControlTextarea1">Second Paragraph</label>
+                                    <textarea class="form-control" id="exampleFormControlTextarea1" placeholder="Write your content here..." rows="5" asp-for="SecondPara"></textarea>
+                                    <span asp-validation-for="SecondPara" class="text-danger"></span>
+                                </div>
+                                <br />
+                                @*<div class="col-lg-12 mb-3 d-grid">
+                                <label for="exampleFormControlFile1">Content Image</label>
+                                <input type="file" asp-for="ContentImage" class="form-control" id="exampleFormControlFile1" required />
+                                </div>*@
+                                <br />
+                                <button type="submit" class="btn btn-primary w-25 m-2">Update &nbsp;<i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                            </form>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
