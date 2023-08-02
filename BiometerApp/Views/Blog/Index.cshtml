@@ -34,7 +34,9 @@
                                 </div>
                                 <ul class="blog_meta list">
                                         <li ><a href="#">@obj.AutherName &nbsp;<i class=" fa-solid fa-user"></i><i class="lnr lnr-user"></i></a></li>
-                                        <li><a href="#">@obj.Date.Day&nbsp; July -@obj.Date.Year &nbsp;<i class="fa-solid fa-clock"></i><i class="lnr lnr-calendar-full"></i></a></li>
+
+
+                                        <li><a href="#">@obj.Date.Day&nbsp;/@obj.Date.Month  &nbsp @obj.Date.Year &nbsp;<i class="fa-solid fa-clock"></i><i class="lnr lnr-calendar-full"></i></a></li>
 
                                 </ul>
                             </div>
@@ -138,7 +140,7 @@
 
                             <div class="media-body">
                                 <a href="single-blog.html"><h3>@obj.BlogTitle</h3></a>
-                                <p>@obj.Date.Hour Hours ago</p>
+                                <p> @obj.Date.Day-@obj.Date.Month-@obj.Date.Year &nbsp; &nbsp; @obj.Date.DayOfWeek</p>
                             </div>
                         </div>
              
